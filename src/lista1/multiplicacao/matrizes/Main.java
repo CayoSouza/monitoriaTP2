@@ -1,4 +1,4 @@
-package multiplicacao.matrizes;
+package lista1.multiplicacao.matrizes;
 
 public class Main {
 	

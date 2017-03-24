@@ -1,4 +1,4 @@
-package bubble.sort;
+package lista1.bubble.sort;
 
 public class Main {
 	

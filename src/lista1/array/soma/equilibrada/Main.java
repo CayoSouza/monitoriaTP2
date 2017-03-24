@@ -1,4 +1,4 @@
-package array.soma.equilibrada;
+package lista1.array.soma.equilibrada;
 
 public class Main {
 

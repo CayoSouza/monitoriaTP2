@@ -1,4 +1,4 @@
-package array.contains.indexOf;
+package lista1.array.contains.indexOf;
 
 public class Main {
 	
