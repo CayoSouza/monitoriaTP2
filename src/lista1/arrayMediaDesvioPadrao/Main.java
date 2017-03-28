@@ -19,12 +19,15 @@ public class Main {
 		double media = calculaMedia(array);
 		double result = 0;
 		
-		//percorre o array calculando o resultado de cada elemento subtraído da média, tudo isso ao quadrado utilizando o Math.pow(numero, potencia)
+		//percorre o array calculando a soma dos quadrados da diferença dos elementos e média
+		//utilizando o Math.pow(numero, potencia) e atribuindo à variável result
 		for(double elem : array)
 			result += Math.pow((elem-media),2);
 		
-		//calcula a variancia dividindo a soma dos quadrados da diferença dos elementos e média, dividido pelo número de elementos
-		double variancia = result / array.length;
+		//calcula a variancia dividindo a soma dos quadrados da diferença dos elementos e média, 
+		//dividido pelo número de elementos
+		double numeroDeElementos = array.length;
+		double variancia = result / numeroDeElementos;
 		
 		return variancia ;
 	}
@@ -33,7 +36,7 @@ public class Main {
 		double variancia = calculaVariancia(array);
 		
 		//calcula a raíz quadrada da variancia através do método square root
-		double desvioPadrao = (double) Math.sqrt(variancia);
+		double desvioPadrao = Math.sqrt(variancia);
 		
 		return desvioPadrao;
 	}
