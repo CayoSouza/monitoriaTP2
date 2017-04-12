@@ -49,8 +49,6 @@ public class Main {
 		String variancia = String.format("%.2f", calculaVariancia(array));
 		String desvioPadrao = String.format("%.2f", calculaDesvioPadrao(array));
 		
-		
-		
 		System.out.println("A média é "+ media);
 		System.out.println("A variância é "+ variancia);
 		System.out.println("O desvio padrão é "+ desvioPadrao);
