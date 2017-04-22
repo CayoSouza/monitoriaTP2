@@ -2,6 +2,10 @@ package aula5.numero4;
 
 import java.util.ArrayList;
 
+/**
+ * Classe que representa um conjunto de dados do tipo float
+ *
+ */
 public class ConjuntoDados {
 	public ArrayList<Float> numeros;
 
@@ -10,24 +14,31 @@ public class ConjuntoDados {
 		numeros = new ArrayList<Float>();
 	}
 
-	//recebe um numero e adiciona ao ArrayList
+	/**
+	 * Adiciona ao conjunto um novo numero
+	 * @param numero
+	 */
 	public void adicionarValor(float numero) {
 		this.numeros.add(numero);
 	}
 
+	/**
+	 * Caclula o menor valor do conjunto
+	 * @return float 
+	 */
 	public float minimo() {
 		//testa se existem elementos no array
 		if (this.numeros.size() > 0) {
 			
-			//atribui ao "menor" o maior valor possível para posteriormente ser comparado
-			//pois qualquer outro número é menor que este valor, menos ele mesmo. Logo,
-			//no pior dos casos, existirá um elemento que será o maior valor em float 
-			//e ele será retornado no final.
+			/* atribui ao "menor" o maior valor possível para posteriormente ser comparado
+			pois qualquer outro número é menor que este valor, menos ele mesmo. Logo,
+			no pior dos casos, existirá um elemento que será o maior valor em float 
+			e ele será retornado no final. */
 			float menor = Float.MAX_VALUE;
 			
-			//percorre o array de numeros comparando cada elemento com o "menor" definido acima
-			//se achar algum elemento menor do que o "menor", o "menor" recebe o elemento em questão
-			//e continua testando para todos os elementos
+			/* percorre o array de numeros comparando cada elemento com o "menor" definido acima
+			se achar algum elemento menor do que o "menor", o "menor" recebe o elemento em questão
+			e continua testando para todos os elementos */
 			for (float elem : this.numeros) {
 				if (elem < menor)
 					menor = elem;
@@ -39,7 +50,10 @@ public class ConjuntoDados {
 			return 0.000f;
 	}
 	
-	//análogo ao mínimo, porém usando o outro extremo, máximo
+	/**
+	 * Caclula o maior valor do conjunto
+	 * @return float
+	 */
 	public float maximo() {
 		if (this.numeros.size() > 0) {
 			
@@ -56,6 +70,10 @@ public class ConjuntoDados {
 			return 0.000f;
 	}
 
+	/**
+	 * Calcula a media dos elementos do conjunto
+	 * @return float
+	 */
 	public float media() {
 		int quantidadeDeElementos = this.numeros.size();
 		if (quantidadeDeElementos > 0) {
@@ -72,6 +90,10 @@ public class ConjuntoDados {
 			return 0.000f;
 	}
 
+	/**
+	 * Calcula o desvio padrão dos elementos do conjunto
+	 * @return float
+	 */
 	public float desvioPadrao() {
 		//cria a variavel local media recebendo o valor da media do arraylist numeros
 		float media = this.media();
@@ -83,8 +105,8 @@ public class ConjuntoDados {
 		
 		float quantidadeDeElementos = this.numeros.size();
 		
-		//calcula a variância dividindo o resultado do algoritmo acima pela
-		//quantidade de elementos do arraylist numeros
+		/* calcula a variância dividindo o resultado do algoritmo acima pela
+		quantidade de elementos do arraylist numeros */
 		float variancia = result / quantidadeDeElementos;
 		
 		//calcula o desvio padrão tirando a raiz quadrada da variancia
