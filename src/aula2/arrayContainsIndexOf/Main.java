@@ -1,4 +1,4 @@
-package lista1.arrayContainsIndexOf;
+package aula2.arrayContainsIndexOf;
 
 public class Main {
 	

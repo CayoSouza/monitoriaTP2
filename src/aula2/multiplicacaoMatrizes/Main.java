@@ -1,4 +1,4 @@
-package lista1.multiplicacaoMatrizes;
+package aula2.multiplicacaoMatrizes;
 
 public class Main {
 	

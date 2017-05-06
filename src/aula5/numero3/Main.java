@@ -3,49 +3,30 @@ package aula5.numero3;
 public class Main {
 
 	public static void main(String[] args) {
-		InstanteDeTempo instante = new InstanteDeTempo();
+		InstanteDeTempo instante = new InstanteDeTempo(2017, 1, 1, 15, 0, 0);
 		
-		int dias = 5;
-		int segundos = 200000;
+		instante.imprimeCurto();
+		instante.imprimeLongo();
 		
-		System.out.println("(Setando "+dias+" dias.)");
-		instante.setDias(dias);
-		instante.imprimeInstante();
+		instante.incrementaDias(40);
 		
-		System.out.println("(Setando "+segundos+" segundos.)");
-		instante.setSegundos(segundos);
-		instante.imprimeInstante();
-	
-		dias = 3;
-		System.out.println("(Incrementando "+dias+" dias.)");
-		instante.incrementaDias(dias);
-		instante.imprimeInstante();
+		instante.imprimeCurto();
+		instante.imprimeLongo();
 		
-		segundos = 86400;
-		System.out.println("(Incrementando "+segundos+" segundos.)");
-		instante.incrementaSegundos(segundos);
-		instante.imprimeInstante();
+		instante.incrementaSegundos(100000);
 		
-		segundos = 500000;
-		System.out.println("(Decrementando "+segundos+" segundos.)");
-		instante.decrementaSegundos(segundos);
-		instante.imprimeInstante();
+		instante.imprimeCurto();
+		instante.imprimeLongo();
 		
-		// lembrando segundos continua 500000, vamos tentar decrementar novamente o que resultaria em negativo
-		System.out.println("(Decrementando "+segundos+" segundos.)");
-		instante.decrementaSegundos(segundos);
-		instante.imprimeInstante();
+		instante.decrementaDias(60);
 		
-		dias = 1;
-		System.out.println("(Decrementando "+dias+" dias.)");
-		instante.decrementaDias(dias);
-		instante.imprimeInstante();
-
+		instante.imprimeCurto();
+		instante.imprimeLongo();
 		
-		// lembrando dias continua 1, vamos tentar decrementar novamente o que resultaria em negativo
-		System.out.println("(Decrementando "+dias+" dias.)");
-		instante.decrementaDias(dias);
-		instante.imprimeInstante();
+		instante.decrementaSegundos(100000);
+		
+		instante.imprimeCurto();
+		instante.imprimeLongo();
 	}
 
 }

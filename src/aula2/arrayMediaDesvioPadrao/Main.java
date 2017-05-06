@@ -1,4 +1,4 @@
-package lista1.arrayMediaDesvioPadrao;
+package aula2.arrayMediaDesvioPadrao;
 
 public class Main {
 	
