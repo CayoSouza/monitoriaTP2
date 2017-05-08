@@ -8,10 +8,15 @@ public class Avaliacoes {
     public static float calculaMOS(int[] avaliacoes){
         int soma = 0;
         
+      	//soma o valor de cada avaliacao
         for(int i : avaliacoes)
             soma += i;
         
-        float MOS = soma / avaliacoes.length;
+      	/*calcula o MOS atrav√©s da soma divido pela quantidade de avaliacoes
+      		o cast de (float) serve para tornar a soma float, deste modo o resultado vai devolver os decimais corretamente
+      		sem o cast, mesmo que retorne um float, s√≥ ser√° levado em conta a parte inteira, por exemplo: 2.0 quando na 
+          verdade o resultado deveria ser 2.8 */
+        float MOS = (float) soma / avaliacoes.length;
         
         return MOS;
     }
@@ -19,10 +24,12 @@ public class Avaliacoes {
     public static float calculaGTS(int[] avaliacoes){
         int quantAvaliacaoBoa = 0;
         
+      	//conta quantas avaliacoes 4 ou 5 existem
         for(int i : avaliacoes)
             if(i == 4 || i == 5)
                 quantAvaliacaoBoa++;
         
+        //calcula o GTS atrav√©s da quantidade de 4's ou 5's divido pela quantidade de avaliacoes 
         float GTS = (float) quantAvaliacaoBoa / avaliacoes.length;
         
         return GTS;
@@ -31,23 +38,23 @@ public class Avaliacoes {
     public static int[] geraOpinioes(int tamanho){
         int[] vetor = new int[tamanho];
         
-        /*como o tamanho È sempre par e um dos elementos È sempre 4 ou 5
+        /*como o tamanho √© sempre par e um dos elementos √© sempre 4 ou 5
         eu posso inserir 4 ou 5 aleatoriamente
         e o outro numero pode ser qualquer numero que
         a media com este meu numero escolhido seja 3 ou menor
         */
         double random = 0;
         
-        /*percorre o vetor de 2 em 2 posiÁıes, j· que o tamanho È sempre par 
-          e em cada iteraÁ„o nÛs populamos o array atual "i" e o seu seguinte "i+1"
-          como pode ser visto nas linhas 54, 55, 58 e 61/63 */
+        /*percorre o vetor de 2 em 2 posi√ß√µes, j√° que o tamanho √© sempre par 
+          e em cada itera√ß√£o n√≥s populamos o array atual "i" e o seu seguinte "i+1"
+          como pode ser visto nas linhas 60, 61, 64 e 67/69 */
         for(int i = 0; i<vetor.length; i+=2){
         	random = Math.random();
         	/*gera um 0 <= random <= 1
-        	 * se o resultado for maior ou igual a 0.5, o valor escolhido para o vetor atual ser· o 5
-        	 * 		neste caso, o prÛximo vetor a ser preenchido DEVE ser com o valor 1, para resultar no MOS menor ou igual a 3
-        	 * caso contr·rio o valor escolhido para o vetor atual ser· o 4
-        	 * 		neste caso, o valor do prÛximo vetor pode ser tanto 1 quanto 2 que ser„o gerados aleatoriamente novamente.
+        	 * se o resultado for maior ou igual a 0.5, o valor escolhido para o vetor atual ser√° o 5
+        	 * 		neste caso, o pr√≥ximo vetor a ser preenchido DEVE ser com o valor 1, para resultar no MOS menor ou igual a 3
+        	 * caso contr√°rio o valor escolhido para o vetor atual ser√° o 4
+        	 * 		neste caso, o valor do pr√≥ximo vetor pode ser tanto 1 quanto 2 que ser√£o gerados aleatoriamente novamente.
         	 */
         	if(random >= 0.5){
         		vetor[i] = 5;
@@ -63,22 +70,21 @@ public class Avaliacoes {
         	}
         }
         
-        //ordena o vetor em ordem crescente sÛ pra dar uma cara mais bonita na ordenaÁ„o
+        //ordena o vetor em ordem crescente s√≥ pra dar uma cara mais bonita na ordena√ß√£o
         Arrays.sort(vetor);
         return vetor;
     }
     
     public static void main(String[] args){
-    	//par‚metro deve ser par(segundo o enunciado)
+    	  //par√¢metro deve ser par(segundo o enunciado)
         int[] ava = geraOpinioes(10);
         
         String output = "";
-        for(int i : ava){
+        for(int i : ava)
         	output += i + " ";
-        }
-        System.out.println("Opini„o gerada: "+ output);
         
+        System.out.println("Opini√£o gerada: "+ output);
         System.out.println("MOS = "+calculaMOS(ava));
         System.out.println("GTS = "+calculaGTS(ava));
     }
-	}
+}
