@@ -1,6 +1,9 @@
-package lista1;
+package lista1.numero3;
 
-public class Questao3 {
+import java.util.ArrayList;
+
+public class TrianguloDePascal {
+	
 	
 	public static int [] linhaPascal (int n){
 		int[] linha = new int[n];

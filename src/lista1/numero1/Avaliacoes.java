@@ -37,8 +37,18 @@ public class Avaliacoes {
         a media com este meu numero escolhido seja 3 ou menor
         */
         double random = 0;
+        
+        /*percorre o vetor de 2 em 2 posições, já que o tamanho é sempre par 
+          e em cada iteração nós populamos o array atual "i" e o seu seguinte "i+1"
+          como pode ser visto nas linhas 54, 55, 58 e 61/63 */
         for(int i = 0; i<vetor.length; i+=2){
         	random = Math.random();
+        	/*gera um 0 <= random <= 1
+        	 * se o resultado for maior ou igual a 0.5, o valor escolhido para o vetor atual será o 5
+        	 * 		neste caso, o próximo vetor a ser preenchido DEVE ser com o valor 1, para resultar no MOS menor ou igual a 3
+        	 * caso contrário o valor escolhido para o vetor atual será o 4
+        	 * 		neste caso, o valor do próximo vetor pode ser tanto 1 quanto 2 que serão gerados aleatoriamente novamente.
+        	 */
         	if(random >= 0.5){
         		vetor[i] = 5;
         		vetor[i+1] = 1;
@@ -60,7 +70,7 @@ public class Avaliacoes {
     
     public static void main(String[] args){
     	//parâmetro deve ser par(segundo o enunciado)
-        int[] ava = geraOpinioes(14);
+        int[] ava = geraOpinioes(10);
         
         String output = "";
         for(int i : ava){
