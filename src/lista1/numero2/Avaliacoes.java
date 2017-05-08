@@ -1,4 +1,4 @@
-package lista1.numero1;
+package lista1.numero2;
 
 import java.util.Arrays;
 import java.util.Collections;
